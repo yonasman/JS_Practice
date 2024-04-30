@@ -139,42 +139,21 @@
 // }
 
 // exercise
-let contacts = [{
-    name: "Maxwell Wright",
-    phone: "(0191) 719 6495",
-    email: "Curabitur.egestas.nunc@nonummyac.co.uk"
-}, {
-    name: "Raja Villarreal",
-    phone: "0866 398 2895",
-    email: "posuere.vulputate@sed.com"
-}, {
-    name: "Helen Richards",
-    phone: "0800 1111",
-    email: "libero@convallis.edu"
-}];
-let opr = prompt("What operation you want to perform: ","Display the first contact (enter f), or last contact(enter l) or adding new contact(enter a) ");
-switch(opr) {
-    case "f":
-        alert(`${contacts[0].name} | ${contacts[0].phone} | ${contacts[0].email}`);
-        break;
-    case "l":
-        alert(`${contacts[contacts.length - 1].name} | ${contacts[contacts.length - 1].phone} | ${contacts[contacts.length - 1].email}`);
-        break;
-    case "a":
-        let newName;
-        let newPhone;
-        let newEmail;
-        do {
-            alert("Please provide all values");
-            newName = prompt("What is the name you want to add: ");
-            newPhone = prompt("What is the phone you want to add: ");
-            newEmail = prompt("What is the email you want to add: ");
-    } while (newName == "" || newPhone == "" || newEmail == "");
-    contacts.push ({
-        name: newName,
-        phone: newPhone,
-        email: newEmail
-    })
-    alert("You added successfully ");
-    alert(contacts[contacts.length - 1].name);
+// 
+let loop = parseInt(prompt("How many movie you want to enter? "));
+let movie = [];
+if(!Number.isNaN(loop)) {
+    for(let i = 0; i < loop;i++) {
+        let Mname = prompt("What is the name of the movie? ");
+        let rate = prompt("What is the rating? ");
+        movie.push(
+            {
+                name : Mname,
+                rating : rate
+            }
+        )
+    }
+}
+for(let ele of movie) {
+    console.log(`${ele.name} => ${ele.rating}`)
 }
