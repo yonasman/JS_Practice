@@ -140,20 +140,76 @@
 
 // exercise
 // 
-let loop = parseInt(prompt("How many movie you want to enter? "));
-let movie = [];
-if(!Number.isNaN(loop)) {
-    for(let i = 0; i < loop;i++) {
-        let Mname = prompt("What is the name of the movie? ");
-        let rate = prompt("What is the rating? ");
-        movie.push(
-            {
-                name : Mname,
-                rating : rate
-            }
-        )
+// let loop = parseInt(prompt("How many movie you want to enter? "));
+// let movie = [];
+// if(!Number.isNaN(loop)) {
+//     for(let i = 0; i < loop;i++) {
+//         let Mname = prompt("What is the name of the movie? ");
+//         let rate = prompt("What is the rating? ");
+//         movie.push(
+//             {
+//                 name : Mname,
+//                 rating : rate
+//             }
+//         )
+//     }
+// }
+// for(let ele of movie) {
+//     console.log(`${ele.name} => ${ele.rating}`)
+// }
+//exercise
+let contacts = [{
+    name: "Maxwell Wright",
+    phone: "(0191) 719 6495",
+    email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+    }, {
+    name: "Raja Villarreal",
+    phone: "0866 398 2895",
+    email: "posuere.vulputate@sed.com"
+    }, {
+    name: "Helen Richards",
+    phone: "0800 1111",
+    email: "libero@convallis.edu"
+}];
+let cont = false;
+while(!cont) {
+    let opr = prompt("What operation you want: display the first contact (first)display the last contact (last) display all contacts (all) add a new contact (new) exit the program (quit)");
+    // break if opr is null
+    if(opr == null) {
+        break;
     }
-}
-for(let ele of movie) {
-    console.log(`${ele.name} => ${ele.rating}`)
+    // switch for specific operation
+    switch(opr) {
+        case "first":
+            alert(`${contacts[0].name}`);
+            break;
+        case "last":
+            alert(`${contacts[contacts.length - 1].name}`);
+            break;
+        case "new":
+            let newName = prompt("What is the name? ");
+            let newPhone = prompt("What is the phone? ");
+            let newEmail = print("What is the email");
+            contacts.push ({
+                name : newName,
+                phone : newPhone,
+                email : newEmail
+            })
+            alert(`The added name ${contacts[contacts.length - 1].name}`);
+            break;
+        case "all":
+            for(let ele of contacts) {
+                alert(ele.name)
+            }
+            break;
+        case "quit":
+            cont = true;
+            break;
+        default:
+            alert("No much found")
+    }
+    let halt = prompt("Do you want to continue? ");
+    if(halt == null) {
+        cont = true;
+    }
 }
