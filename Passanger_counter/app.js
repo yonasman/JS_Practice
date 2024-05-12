@@ -158,58 +158,52 @@
 //     console.log(`${ele.name} => ${ele.rating}`)
 // }
 //exercise
-let contacts = [{
-    name: "Maxwell Wright",
-    phone: "(0191) 719 6495",
-    email: "Curabitur.egestas.nunc@nonummyac.co.uk"
-    }, {
-    name: "Raja Villarreal",
-    phone: "0866 398 2895",
-    email: "posuere.vulputate@sed.com"
-    }, {
-    name: "Helen Richards",
-    phone: "0800 1111",
-    email: "libero@convallis.edu"
-}];
-let cont = false;
-while(!cont) {
-    let opr = prompt("What operation you want: display the first contact (first)display the last contact (last) display all contacts (all) add a new contact (new) exit the program (quit)");
-    // break if opr is null
-    if(opr == null) {
-        break;
+// let add = (a,b) => (!Number.isInteger(a) || !Number.isInteger(b)) ? NaN : a + b;
+// function action(func,c,d) {
+//     let res = func(c,d);
+//     return res;
+// }
+// console.log(action(add,1.1,2));
+// exercise
+// Write a program that will print out (to the console) consecutive integers 10 times, in two-second intervals (start with the number 1). Use the functions setInterval, clearInterval and setTimeout.
+// let i = 1;
+// let intervalId = setInterval(() => {
+//         console.log(i++);
+// },2000);
+// setTimeout(() => clearInterval(intervalId),22000);
+
+// Exercise 6: Write a function that will calculate the n-th element of the Fibonacci sequence. This sequence is defined by a formula:
+
+function fibonacci(n) {
+    let fibSum = 0
+    if(n !== 0) {
+        if ( n === 1) {
+        fibSum =   1;
+        } else {
+        fibSum = fibonacci(n - 1) + fibonacci(n - 2);
+        }
     }
-    // switch for specific operation
-    switch(opr) {
-        case "first":
-            alert(`${contacts[0].name}`);
-            break;
-        case "last":
-            alert(`${contacts[contacts.length - 1].name}`);
-            break;
-        case "new":
-            let newName = prompt("What is the name? ");
-            let newPhone = prompt("What is the phone? ");
-            let newEmail = print("What is the email");
-            contacts.push ({
-                name : newName,
-                phone : newPhone,
-                email : newEmail
-            })
-            alert(`The added name ${contacts[contacts.length - 1].name}`);
-            break;
-        case "all":
-            for(let ele of contacts) {
-                alert(ele.name)
-            }
-            break;
-        case "quit":
-            cont = true;
-            break;
-        default:
-            alert("No much found")
-    }
-    let halt = prompt("Do you want to continue? ");
-    if(halt == null) {
-        cont = true;
-    }
+    return fibSum;
 }
+// console.log(fibonacci(5)); 
+// f2 = f0 + f1 => 0 + 1 = 1
+// f3 = f1 + f2 => 1 + 1 = 2
+// f4 = f2 + f3 => 2 + 1 = 3
+// f5 = f3 + f4 => 2 + 3 = 5
+// using arrow function
+// let fib = num => sum = num == 0 ? 0 : (num == 1 ? 1 : fib(num - 1) + fib(num - 2)); 
+// console.log(fib(5));
+// using iteration to implement fibonacci
+// function fibItr(n) {
+//     let a = 0;
+//     let b = 1;
+//     let next;
+//     next = n == 0 ? 0 : 1;
+//     for(let i = 2; i <= n; i++) {//a(1),a(2)
+//         next = a + b; //1
+//         a = b; // a = 1
+//         b = next; // b = 1
+//     }
+//     return next;
+// }
+// console.log(fibItr(4))
