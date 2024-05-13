@@ -207,3 +207,91 @@ function fibonacci(n) {
 //     return next;
 // }
 // console.log(fibItr(4))
+// Exercise
+// Our program has grown quite a bit, making it a little hard to read. It is especially visible in the switch instruction, where most of the logic is enclosed. Try to organize your program code by using functions. Define and call three functions in the appropriate places:
+
+// showContact: the function should take two arguments; the first is the list of contacts, and the second is the index number of the contact to display; inside the function, check if the correct arguments are passed, that is, if the contacts are an array (use the instanceofArray construction for this);
+// showAllContacts: the function should take one argument, the list of contacts; inside the function, check if the given argument is an array;
+// addNewContact: the function should take four arguments, a contact list and the data of the new contact, that is: name, phone, and number; before adding a new contact, check if the passed argument is an array and if the new contact data have any value.
+
+
+function showContact(contactList,index) {
+    if(!(contactList instanceof Array)) {
+        alert("the contact list should be an array!");
+    }
+    if(!Number.isInteger(index)) {
+        alert("The index should be integer!");
+    }
+    for(let i = 0;i < contactList.length;i++) {
+        if(i == index) {
+            alert(`The contact that you're looking for is: ${contactList[i].name}`);
+            break;
+        }
+    }
+}
+let showAllContacts = function(contactList) {
+    if(!(contactList instanceof Array)) {
+        alert("The contact list should an array");
+    }
+    for(let i = 1;i <= contactList.length;i++) {
+        alert(`The ${i} contact is: ${contactList[i].name} | ${contactList[i].phone} | ${contactList[i].email}`)
+    }
+}
+
+let addNewContact = (contactList) => {
+    if(!(contactList instanceof Array)) {
+        alert("The contact list should an array");
+    }
+    let name = prompt("Name of contact:")
+    let phone = prompt("Phone of contact");
+    let email = prompt("Email of contact");
+    if(name == null || phone == null || email == null) {
+        alert("Please provide all the info!");
+    }
+    contactList.push({
+        name : name,
+        phone : phone,
+        email : email
+    })
+    alert("Added successfully");
+    alert(`The added contact name is ${contactList[contactList.length - 1].name}`)
+}
+let choice;
+do {
+    let contacts = [{
+        name: "Maxwell Wright",
+        phone: "(0191) 719 6495",
+        email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+    }, {
+        name: "Raja Villarreal",
+        phone: "0866 398 2895",
+        email: "posuere.vulputate@sed.com"
+    }, {
+        name: "Helen Richards",
+        phone: "0800 1111",
+        email: "libero@convallis.edu"
+    }];
+    choice = prompt("What action You want to perform", "1-show a contact, 2- showAllContact, 3- Add new contact,4- to exit");
+    //alert if the input is not a number
+    if(!Number(choice)) {
+        alert("Please provide number only");
+    }
+    //switch to perform the specific action
+    switch(Number(choice)) {
+        case 1:
+            let ind = prompt("What is the index of the contact","0,1,2,3...");
+            showContact(contacts,Number(ind));
+            break;
+        case 2:
+            showAllContacts(contacts);
+            break;
+        case 3:
+            addNewContact(contacts)
+            break;
+        case 4:
+            break;
+        default:
+            alert("You didn't select the specific action");
+            break;
+    }
+} while(Number(choice) !== 4);
