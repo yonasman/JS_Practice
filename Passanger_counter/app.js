@@ -317,17 +317,105 @@ function div(a,b) {
 //         console.log(error.message)
 //     }
 // }
-console.time("s");
-function outer() {
-    let name = "outer";
-    let str = inner();
-    return str;
+// console.time("s");
+// function outer() {
+//     let name = "outer";
+//     let str = inner();
+//     return str;
+// }
+// function inner() {
+//     let name = "inner";
+//     return "Hello !";
+// }
+// console.log("before outer() call");
+// console.log(outer());
+// console.log("after outer() call");
+// console.timeEnd("s");
+// Exercise
+// You have started to organize the paintings you keep at home, and have decided to make an inventory of some of the most important ones. Declare an array of objects that will correspond to the following images: Mona Lisa (Leonardo da Vinci, 1503), The Last Supper (Leonardo da Vinci, 1495), Starry Night (Vincent van Gogh, 1889), The Scream (Edvard Munch, 1893), Guernica (Pablo Picasso, 1937), The Kiss (Gustav Klimt, 1907), Girl With a Pearl Earring (Johannes Vermeer, 1665), The Birth of Venus (Sandro Botticelli, 1485), Las Meninas (Diego Velázquez, 1656), The Creation of Adam (Michelangelo, 1512).
+// Display all the images in the list in the console (full information: title, artist and date of creation).
+//answer
+let images = [{
+    title:"Mona Lisa",
+    artist: "Leonardo da Vinci",
+    dateOfCreation:1503
+},{
+    title: "The scream",
+    artist: "Edvard Much",
+    dateOfCreation : 1893 
+},{
+    title: "Guernica",
+    artist: "Pablo Picasso",
+    dateOfCreation : 1937
+}]
+// method 1
+// for(member of images) {
+//     console.log(`Title: ${member.title} Artist: ${member.artist} dateOFCreation: ${member.dateOfCreation}`)
+// }
+// method 2
+// images.forEach((member) => {console.log(`Title: ${member.title} Artist: ${member.artist} dateOFCreation: ${member.dateOfCreation}`)})
+// Exercise
+// Write two functions, Image and getImage, that will return a new image object based on three given arguments: title, artist, and date.
+
+// The Image function is the constructor, and getImage is the factory. Using the images data array from the previous task, create a new array, images1, using the Image constructor (don't copy the objects, but just create new ones based on the properties read).
+
+// Similarly, from images1 create a new array, images2, using getImage.
+
+// Display the contents of images2.
+//image constructor
+let Image = function(title,artist,dateOfCreation) {
+    this.title = title,
+    this.artist = artist,
+    this.dateOfCreation = dateOfCreation
 }
-function inner() {
-    let name = "inner";
-    return "Hello !";
+// image returning func
+// let getImage = function(title,artist,dateOfCreation) {
+//     return {
+//         title,
+//         artist,
+//         dateOfCreation
+//     }
+// }
+// let image1 = [];
+// images.forEach(image => image1.push(new Image(image.title,image.artist,image.dateOfCreation)))
+// console.log(image1.getImage())
+let imagePaintings = {
+    list : [],
+    contains: function(title) {
+        isContained = false;
+        for(image of this.list) {
+            if(image.title === title) {
+                isContained = true;
+            }   
+        }
+        return isContained;
+    },
+    add: function(title,artist,dateOfCreation) {
+        if(!this.list.contain(title)) {
+            this.list.push(title,artist,dateOfCreation);
+        }
+    },
+    edit : function(title,artist,dateOfCreation) {
+        if(this.list.contains(title)) {
+            for(image of this.list) {
+                if(image.title === title) {
+                    image.artist = artist;
+                    image.dateOfCreation = dateOfCreation;
+                    break;
+                }
+            }
+        }
+    },
 }
-console.log("before outer() call");
-console.log(outer());
-console.log("after outer() call");
-console.timeEnd("s");
+// deep copy function
+let deepCopy = function(obj) {
+    let newObj = Array.isArray(obj) ? [] : {};
+    for(keys in obj) {
+        if(typeof obj[keys] === "object") {
+            newObj[keys] = deepCopy(obj[keys]);
+        } else {
+            newObj[keys] = obj[keys];
+        }
+    }
+    return newObj;
+}
