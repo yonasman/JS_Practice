@@ -379,43 +379,74 @@ let Image = function(title,artist,dateOfCreation) {
 // let image1 = [];
 // images.forEach(image => image1.push(new Image(image.title,image.artist,image.dateOfCreation)))
 // console.log(image1.getImage())
-let imagePaintings = {
-    list : [],
-    contains: function(title) {
-        isContained = false;
-        for(image of this.list) {
-            if(image.title === title) {
-                isContained = true;
-            }   
-        }
-        return isContained;
-    },
-    add: function(title,artist,dateOfCreation) {
-        if(!this.list.contain(title)) {
-            this.list.push(title,artist,dateOfCreation);
-        }
-    },
-    edit : function(title,artist,dateOfCreation) {
-        if(this.list.contains(title)) {
-            for(image of this.list) {
-                if(image.title === title) {
-                    image.artist = artist;
-                    image.dateOfCreation = dateOfCreation;
-                    break;
-                }
-            }
-        }
-    },
+// let imagePaintings = {
+//     list : [],
+//     contains: function(title) {
+//         isContained = false;
+//         for(image of this.list) {
+//             if(image.title === title) {
+//                 isContained = true;
+//             }   
+//         }
+//         return isContained;
+//     },
+//     add: function(title,artist,dateOfCreation) {
+//         if(!this.list.contain(title)) {
+//             this.list.push(title,artist,dateOfCreation);
+//         }
+//     },
+//     edit : function(title,artist,dateOfCreation) {
+//         if(this.list.contains(title)) {
+//             for(image of this.list) {
+//                 if(image.title === title) {
+//                     image.artist = artist;
+//                     image.dateOfCreation = dateOfCreation;
+//                     break;
+//                 }
+//             }
+//         }
+//     },
+// }
+// // deep copy function
+// let deepCopy = function(obj) {
+//     let newObj = Array.isArray(obj) ? [] : {};
+//     for(keys in obj) {
+//         if(typeof obj[keys] === "object") {
+//             newObj[keys] = deepCopy(obj[keys]);
+//         } else {
+//             newObj[keys] = obj[keys];
+//         }
+//     }
+//     return newObj;
+// }
+
+// ********************************************
+// let log = prompt("Please log in: ");
+// if(log == "admin") {
+//     let password = prompt("Please enter your password: ");
+//     if(password == "TheMaster") {
+//         alert("Welcome!");
+//     } else if(password == null || password == "") {
+//         alert("canceled");
+//     } else {
+//         alert("Wrong password!");
+//     }
+// } else if(log == null) {
+//     alert("canceled");
+// } else {
+//     alert("I don't know");
+// }
+let phone = document.querySelector("input");
+console.log(phone)
+let check = /^(\+\d{1,2}\s?-?)?\(?\d{3}\)?[-\s.]?\d{3}[-\s.]?\d{4}$/;
+let button = document.querySelector("button");
+console.log(button)
+function checker() {
+    if(check.test(phone.value)) {
+        console.log('logged in')
+    } else {
+        console.log('incorrect password')
+    }   
 }
-// deep copy function
-let deepCopy = function(obj) {
-    let newObj = Array.isArray(obj) ? [] : {};
-    for(keys in obj) {
-        if(typeof obj[keys] === "object") {
-            newObj[keys] = deepCopy(obj[keys]);
-        } else {
-            newObj[keys] = obj[keys];
-        }
-    }
-    return newObj;
-}
+
+button.addEventListener('click',checker)
