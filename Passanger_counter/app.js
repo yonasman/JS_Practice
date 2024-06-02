@@ -174,17 +174,17 @@
 
 // Exercise 6: Write a function that will calculate the n-th element of the Fibonacci sequence. This sequence is defined by a formula:
 
-function fibonacci(n) {
-    let fibSum = 0
-    if(n !== 0) {
-        if ( n === 1) {
-        fibSum =   1;
-        } else {
-        fibSum = fibonacci(n - 1) + fibonacci(n - 2);
-        }
-    }
-    return fibSum;
-}
+// function fibonacci(n) {
+//     let fibSum = 0
+//     if(n !== 0) {
+//         if ( n === 1) {
+//         fibSum =   1;
+//         } else {
+//         fibSum = fibonacci(n - 1) + fibonacci(n - 2);
+//         }
+//     }
+//     return fibSum;
+// }
 // console.log(fibonacci(5)); 
 // f2 = f0 + f1 => 0 + 1 = 1
 // f3 = f1 + f2 => 1 + 1 = 2
@@ -297,12 +297,12 @@ function fibonacci(n) {
 // } while(Number(choice) !== 4);
 // Exercise
 // Write your own div function that will take two call arguments and return the result of dividing the first argument by the second. In JavaScript, the result of dividing by zero is the value Infinity (or -Infinity, if we try to divide a negative number). Change this. If you pass 0 as the second argument, your function should throw a RangeError exception with the appropriate message. Prepare a test call of the function for both valid division and division by zero.
-function div(a,b) {
-    if(b == 0) {
-        throw new RangeError("The second value can't be zero!");
-    }
-    return a / b;
-}
+// function div(a,b) {
+//     if(b == 0) {
+//         throw new RangeError("The second value can't be zero!");
+//     }
+//     return a / b;
+// }
 // console.log(div(1,2));
 // console.log(div(1,0));
 // Exercise
@@ -335,19 +335,19 @@ function div(a,b) {
 // You have started to organize the paintings you keep at home, and have decided to make an inventory of some of the most important ones. Declare an array of objects that will correspond to the following images: Mona Lisa (Leonardo da Vinci, 1503), The Last Supper (Leonardo da Vinci, 1495), Starry Night (Vincent van Gogh, 1889), The Scream (Edvard Munch, 1893), Guernica (Pablo Picasso, 1937), The Kiss (Gustav Klimt, 1907), Girl With a Pearl Earring (Johannes Vermeer, 1665), The Birth of Venus (Sandro Botticelli, 1485), Las Meninas (Diego Velázquez, 1656), The Creation of Adam (Michelangelo, 1512).
 // Display all the images in the list in the console (full information: title, artist and date of creation).
 //answer
-let images = [{
-    title:"Mona Lisa",
-    artist: "Leonardo da Vinci",
-    dateOfCreation:1503
-},{
-    title: "The scream",
-    artist: "Edvard Much",
-    dateOfCreation : 1893 
-},{
-    title: "Guernica",
-    artist: "Pablo Picasso",
-    dateOfCreation : 1937
-}]
+// let images = [{
+//     title:"Mona Lisa",
+//     artist: "Leonardo da Vinci",
+//     dateOfCreation:1503
+// },{
+//     title: "The scream",
+//     artist: "Edvard Much",
+//     dateOfCreation : 1893 
+// },{
+//     title: "Guernica",
+//     artist: "Pablo Picasso",
+//     dateOfCreation : 1937
+// }]
 // method 1
 // for(member of images) {
 //     console.log(`Title: ${member.title} Artist: ${member.artist} dateOFCreation: ${member.dateOfCreation}`)
@@ -363,11 +363,11 @@ let images = [{
 
 // Display the contents of images2.
 //image constructor
-let Image = function(title,artist,dateOfCreation) {
-    this.title = title,
-    this.artist = artist,
-    this.dateOfCreation = dateOfCreation
-}
+// let Image = function(title,artist,dateOfCreation) {
+//     this.title = title,
+//     this.artist = artist,
+//     this.dateOfCreation = dateOfCreation
+// }
 // image returning func
 // let getImage = function(title,artist,dateOfCreation) {
 //     return {
@@ -436,17 +436,112 @@ let Image = function(title,artist,dateOfCreation) {
 // } else {
 //     alert("I don't know");
 // }
-let phone = document.querySelector("input");
-console.log(phone)
-let check = /^(\+\d{1,2}\s?-?)?\(?\d{3}\)?[-\s.]?\d{3}[-\s.]?\d{4}$/;
-let button = document.querySelector("button");
-console.log(button)
-function checker() {
-    if(check.test(phone.value)) {
-        console.log('logged in')
-    } else {
-        console.log('incorrect password')
-    }   
-}
+// let phone = document.querySelector("input");
+// console.log(phone)
+// let check = /^(\+\d{1,2}\s?-?)?\(?\d{3}\)?[-\s.]?\d{3}[-\s.]?\d{4}$/;
+// let button = document.querySelector("button");
+// console.log(button)
+// function checker() {
+//     if(check.test(phone.value)) {
+//         console.log('logged in')
+//     } else {
+//         console.log('incorrect password')
+//     }   
+// }
 
-button.addEventListener('click',checker)
+// button.addEventListener('click',checker)
+// console.log(generator());
+// function generator (min = 1,max = 10) {
+//     let ans = Math.floor((Math.random() * ((max - min) + 1)) + min);
+//     return ans;
+// }
+// let num = prompt('What is the number');
+// let exp = prompt('What is the exponent');
+
+// ***************************
+// let num = parseInt(prompt("Please enter a number you would like to fizz buzz to: "));
+
+// for(let i = 1;i <= num;i++) {
+
+//     if(i % 3 == 0 && i % 5 == 0) {
+//         console.log("FizzBuzz");
+//     } else if(i % 3 == 0) {
+//         console.log("Fizz");
+//     } else if(i % 5 == 0) {
+//         console.log("Buzz");
+//     } else {
+//         console.log(i);
+//     }
+// }
+
+// Get number input from user
+// Set the parsed number to a variable named num(num = parseInt(input))
+// For number < num(number starting from 1):
+//       If num is divisible by both 3 and 5:
+//              print(FizzBuzz)
+//       Else if num is divisible by 3:
+//              print(Fizz)
+//       Else if num is divisible by 5:
+//              print(Buzz);
+//       Else:
+//              print(number)
+//       Endif
+// EndFor
+
+// *******************************
+// Get user input and store it in a variable named num
+// Set a variable sum to zero for storing tha result
+// For number less than n starting from 1:
+//      add 1/number to sum variable
+// EndFor
+// Return sum
+
+// Define a func named cutter that takes a parameter str
+// slice the last letter recursively till length of str is 1
+// build the original string starting from length 1
+
+// *****************************************
+// area of triangle
+// pseudocode
+// Define a function named areaOfTriangle that takes 2 parameters(base, height)
+
+// check if the parameters are numbers
+//      if they aren't numbers:
+//          return "Please provide number values only"
+//      else:
+//          return 1/2 * base * height(area)
+// function areaOfTriangle(base,height) {
+//     if(typeof base != "number" || typeof height != "number") {
+//         return "Please provide number values only"
+//     } else {
+//         return 1/2 * base * height
+//     }
+// }
+// console.log(areaOfTriangle(1,"1"));
+
+// calculate the point of soccer
+// pseudocode
+// Define a function named soccerPoints that takes three parameters(wins, draws, loses)
+// Check if the arguments are number type
+//      If arguments aren't number:
+//          return "Please provide number values only"
+//      Else if anyone of the argument is undefined:
+//          return "Please provide all inputs(arguments)"
+//      Else:
+//          return wins * 3 + draws * 1 + loses * 0
+//      End if
+// End function
+
+function soccerPoints(wins, draws, loses) {
+    if(wins == undefined || draws == undefined || loses == undefined) {
+        return "Please provide all inputs(arguments)";
+    } else if(typeof wins != "number" ||typeof draws != "number" || typeof loses != "number") {
+        return "Please provide  number values only";
+    } else if(wins < 0 || draws < 0 || loses < 0) {
+        return "Please provide positive number values only"
+    } else {
+        // calculate the total point and return
+        return wins * 3 + draws * 1 + loses * 0;
+    }
+}
+console.log(soccerPoints(-1,0,1));
