@@ -558,7 +558,7 @@
 //      Else:
 //          return minute * 60
 function minuteToSecond(min) {
-    if(typeof min != "number") {
+    if(isNaN(min)) {
         return "Please provide a number value";
     } else if(min < 0) {
         return "Please provide positive number value";
@@ -566,4 +566,19 @@ function minuteToSecond(min) {
         return min * 60
     }
 }
-console.log(minuteToSecond(-1))
+
+function display(e) {
+    e.preventDefault();
+
+    let input = document.getElementById("input-num");
+    let value = +(input.value);
+    // console.log(value);
+    let result  = document.getElementById("result");
+
+    answer = minuteToSecond(value);
+    result.textContent = answer;
+    // console.log(result)
+}
+let form = document.getElementById("form-2")
+// console.log(form)
+form.addEventListener('submit', display);
