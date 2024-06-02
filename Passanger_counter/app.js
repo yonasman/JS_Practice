@@ -532,16 +532,38 @@
 //      End if
 // End function
 
-function soccerPoints(wins, draws, loses) {
-    if(wins == undefined || draws == undefined || loses == undefined) {
-        return "Please provide all inputs(arguments)";
-    } else if(typeof wins != "number" ||typeof draws != "number" || typeof loses != "number") {
-        return "Please provide  number values only";
-    } else if(wins < 0 || draws < 0 || loses < 0) {
-        return "Please provide positive number values only"
+// function soccerPoints(wins, draws, loses) {
+//     if(wins == undefined || draws == undefined || loses == undefined) {
+//         return "Please provide all inputs(arguments)";
+//     } else if(typeof wins != "number" ||typeof draws != "number" || typeof loses != "number") {
+//         return "Please provide  number values only";
+//     } else if(wins < 0 || draws < 0 || loses < 0) {
+//         return "Please provide positive number values only"
+//     } else if(arguments.length > 3) {
+//         return "Please provide only 3 inputs(arguments)"
+//     } else {
+//         // calculate the total point and return
+//         return wins * 3 + draws * 1 + loses * 0;
+//     }
+// }
+// console.log(soccerPoints(1,1,0,1));
+// ****************************************
+// write a function that takes an integer minute and convert to seconds
+// pseudocode
+// Define a function that takes a minute arguments
+//      If the arguments is not number:
+//          return "Please provide a number value"
+//      Else if the argument is negative:
+//          return "Please provide positive number value"
+//      Else:
+//          return minute * 60
+function minuteToSecond(min) {
+    if(typeof min != "number") {
+        return "Please provide a number value";
+    } else if(min < 0) {
+        return "Please provide positive number value";
     } else {
-        // calculate the total point and return
-        return wins * 3 + draws * 1 + loses * 0;
+        return min * 60
     }
 }
-console.log(soccerPoints(-1,0,1));
+console.log(minuteToSecond(-1))
