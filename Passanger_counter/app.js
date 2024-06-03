@@ -557,28 +557,160 @@
 //          return "Please provide positive number value"
 //      Else:
 //          return minute * 60
-function minuteToSecond(min) {
-    if(isNaN(min)) {
-        return "Please provide a number value";
-    } else if(min < 0) {
-        return "Please provide positive number value";
-    } else {
-        return min * 60
+// function minuteToSecond(min) {
+//     if(isNaN(min)) {
+//         return "Please provide a number value";
+//     } else if(min < 0) {
+//         return "Please provide positive number value";
+//     } else {
+//         return min * 60
+//     }
+// }
+
+// function display(e) {
+//     e.preventDefault();
+
+//     let input = document.getElementById("input-num");
+//     let value = +(input.value);
+//     // console.log(value);
+//     let result  = document.getElementById("result");
+
+//     answer = minuteToSecond(value);
+//     result.textContent = answer;
+//     // console.log(result)
+// }
+// let form = document.getElementById("form-2")
+// // console.log(form)
+// form.addEventListener('submit', display);
+
+// *****************************************
+// Define a func named minuteToSecond that takes integer parameter(min)
+//      If the argument is not number:
+//          return "Please provide number values only"
+//      Else if the argument is negative:
+//          return "Please provide positive number only"
+//      Else if no argument is given:
+//          return "Please provide a value"
+//      Else:
+//          return min * 60
+// ********************
+// Pseudocode
+// **********
+// Define a func named addUpToNum that takes a num as a parameter
+// Set a variable sum = 0
+// For loop from i = 1 to num
+//      Add i to sum in each iteration
+// ENDFOR
+// Return sum
+// code
+// ****
+// function addUpToNum(num) {
+//     let sum  = 0;
+//     for(let i  = 1;i <= num;i++) {
+//         sum += i;
+//     }
+//     return sum;
+// }
+// console.log(addUpToNum(-4))
+// **********************************
+// Pseudocode
+// **********
+// Define a func named matchHouses that takes steps as a parameter
+// IF step is 0:
+//      return 0
+// IF ELSE step is negative:
+//      return "Step can't be negative"
+// ELSE:
+//      return 4*step + (step + 1)
+// END IF
+// code
+// ****
+// function matchHouses(step) {
+//     if(step == 0) {
+//         return 0;
+//     } else if(step < 0) {
+//         return "Step can't be negative";
+//     } else {
+//         return 4*step + (step + 1);
+//     }
+
+// }
+// console.log(matchHouses(4))
+// ****************************************
+// Create a function that calculates the number of different squares in an n * n square grid. Check the Resources tab.
+// Examples
+// numberSquares(2) ➞ 5
+// numberSquares(4) ➞ 30
+// numberSquares(5) ➞ 55
+// ***************************
+// Pseudocode
+// **********
+// Define a func named numberSquares that takes n as a parameter
+// IF n is 0:
+//      return 0;
+// ELSE IF n is 1:
+//      return 1;
+// ELSE:
+//      return n**2 + func(n - 1);
+// function numberSquares(n) {
+// 	if(n == 0) {
+//         return 0;
+//     } else if(n == 1) {
+//         return 1;
+//     } else {
+//         return n**2 + numberSquares(n -1);
+//     }
+// }
+// console.log(numberSquares(5))
+// **************************************
+// function timeForMilkAndCookies(Date) {
+//     let year = Date.getFullYear();
+//     let month = Date.getMonth();
+//     let day = Date.getDate();
+
+//     if(month == 11 && day == 24) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+// console.log(timeForMilkAndCookies(new Date(2021,11,24)));
+
+// *****************************************
+// Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+// Examples
+// minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+// minMax([2334454, 5]) ➞ [5, 2334454]
+// minMax([1]) ➞ [1, 1]
+
+// *********
+// Pseudocode
+// Define a function named minMax that takes array as a parameter
+// Set a new array variable to store the min and max values
+// Set a variable named min to array[0]
+// Set a variable named max to array[0]
+// FOR i from 0 to length of the array:
+//      if (min > array[i]):
+//          set min = array[i];
+//      if(max < array[i]):
+//          set max = array[i];
+// END FOR
+// Push min to new array
+// Push max to new array
+function minMax(arr) {
+    let newArray = [];
+    let min = arr[0];
+    let max = arr[0];
+    for(let i = 0;i < arr.length;i++) {
+        if(min > arr[i]) {
+            min = arr[i];
+        }
+        if(max < arr[i]) {
+            max = arr[i];
+        }
     }
+    newArray.push(min);
+    newArray.push(max);
+    return newArray;
 }
-
-function display(e) {
-    e.preventDefault();
-
-    let input = document.getElementById("input-num");
-    let value = +(input.value);
-    // console.log(value);
-    let result  = document.getElementById("result");
-
-    answer = minuteToSecond(value);
-    result.textContent = answer;
-    // console.log(result)
-}
-let form = document.getElementById("form-2")
-// console.log(form)
-form.addEventListener('submit', display);
+console.log(minMax([1]))
