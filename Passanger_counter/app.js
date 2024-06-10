@@ -697,20 +697,199 @@
 // END FOR
 // Push min to new array
 // Push max to new array
-function minMax(arr) {
-    let newArray = [];
-    let min = arr[0];
-    let max = arr[0];
-    for(let i = 0;i < arr.length;i++) {
-        if(min > arr[i]) {
-            min = arr[i];
-        }
-        if(max < arr[i]) {
-            max = arr[i];
-        }
-    }
-    newArray.push(min);
-    newArray.push(max);
-    return newArray;
+// function minMax(arr) {
+//     let newArray = [];
+//     let min = arr[0];
+//     let max = arr[0];
+//     for(let i = 0;i < arr.length;i++) {
+//         if(min > arr[i]) {
+//             min = arr[i];
+//         }
+//         if(max < arr[i]) {
+//             max = arr[i];
+//         }
+//     }
+//     newArray.push(min);
+//     newArray.push(max);
+//     return newArray;
+// }
+// console.log(minMax([1]))
+// ******************************
+// class NumberError extends Error {
+//     constructor(value) {
+//         super(`${value}: is invalid number`);
+//         this.name = "InvalidNumber"
+//     }
+// }
+// function num(n) {
+//     if(typeof n != "number") {
+//         throw new NumberError;
+//     } else {
+//         console.log(n);
+//     }
+// }
+// try {
+//     num('a');
+// } catch (e) {
+//     console.log(e.name, e.message);
+// }
+// **********************************
+// What's hiding amongst
+// the crowd? A word is on the loose and now has tried to hide amongst a crowd of tall letters!
+// Help write a function to detect what the word is, knowing the following rules.
+// • Rule 1: The crowd word has all its letters in uppercase
+// • Rule 2: The wanted word has all its letters in lowercase
+// • Rule 3: Note that the word will be spread out amongst the random letters, but their
+// letters remain in the same order
+// • Test case 1: detectWord("UcUNFYGaFYFYGtNUH") prints "cat"
+// • Test case 2: detectWord("bEEFGBuFBRrHgUHlNFYaYr") prints "burglar"
+// Pseudocode
+// ******************
+// Define a function named findHiddenWord that takes a string parameter word
+// Declare a variable named hiddenWord
+// Set the variable to empty string
+// For i less than the length of string:
+//      if the word at i is not equal to its converted uppercase:
+//          push it to the hiddenWord string
+// ENDFOR
+// Return hiddenWord
+// function findHiddenWord(word) {
+//     let hiddenWord = ""
+//     for(let i = 0;i < word.length;i++) {
+//         if(word[i] != word[i].toUpperCase()) {
+//             hiddenWord += word[i];
+//         }
+//     }
+//     return hiddenWord;
+// }
+// console.log(findHiddenWord("bEEFGBuFBRrHgUHlNFYaYr"));
+
+// ***************************************************
+// let array = [];
+// let sum = 0;
+// while(true) {
+//     let input = prompt("Enter numbers that you want: ");
+//     // console.log(input);
+//     if(input == null || (isNaN(input))) {
+//         break;
+//     }
+//     array.push(+input);
+
+// }
+// for(let i = 0;i < array.length;i++) {
+//     sum += array[i];
+// }
+// alert(sum);
+// ******************************
+// Pseudocode
+// Define a function named camelize that takes a hyphen separated string
+// Split the string on "-" delim
+// Map through the array and change the first letter of the word to uppercase starting from 2nd index
+// Join the words on ""
+// function camelize(str) {
+//     let arr = str.split("-");
+//     // console.log(arr);
+//     for(let i = 1;i < arr.length;i++) {
+//        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+//     }
+//     let camelCase = arr.join("");
+//     return camelCase;
+// }
+// console.log(camelize("list-style-image"));
+// *****************************
+// Pseudocode
+// Define a function named filterRange that takes 3 parameters arr, num1, num2
+// Filter the array to return the items greater or equal to num1 and less or equal to
+// num2
+// function filteredArray(arr, num1, num2) {
+//     let newArray = arr.filter((item) => item >= num1 && item <= num2)
+//     console.log(arr)
+//     return newArray;
+
+// }
+// console.log(filteredArray([5, 3, 8, 1],1,4));
+// Same function without returning new array
+// function filteredInPlace(arr,num1,num2) {
+//     for(let i = 0;i < arr.length;i++) {
+//         let val = arr[i];
+//         if(val < num1 || val > num2) {
+//             arr.splice(i,1);
+//         }
+//     }
+//     return arr;
+// }
+// console.log(filteredInPlace([5, 3, 8, 1],1,4))
+// ****************************************
+// Sort in decreasing order
+// Define a function named sort in decreasing order that takes array parameter
+// use comparator function to order in descending order
+// function decreasingOrder(arr) {
+//     arr.sort((a,b) => b - a);
+//     return arr;
+// }
+// console.log(decreasingOrder([5, 2, 1, -10, 8]));
+// **********************************************
+// copy and sort array
+// Pseudocode
+// Define a function named copyAndSort that takes array as parameter
+// Slice it and store in a variable
+// sort it
+// arr = ["HTML", "JavaScript", "CSS"]
+// function copyAndSort(arr) {
+//     return  arr.slice().sort();
+// }
+// console.log(copyAndSort(arr));
+// console.log(arr)
+// ***************************************************
+// Pseudocode
+// Define a function named findName that takes array as a parameter
+// Map through the array and return the name of each user
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let users = [ john, pete, mary ];
+// function findName(arr) {
+//     let names = arr.map((user) => user.name);
+//     return names;
+// }
+// console.log(findName(users))
+// ***************************************
+// Pseudocode
+// Define a function named usersMapped that take arr as a parameter
+// Map through the array and return an object that contains full name & id
+
+// let john = { name: "John", surname: "Smith", id: 1 };
+// let pete = { name: "Pete", surname: "Hunt", id: 2 };
+// let mary = { name: "Mary", surname: "Key", id: 3 };
+
+// let users = [ john, pete, mary ];
+
+// function usersMapped(arr) {
+//     let mappedUsers = arr.map((user) => {
+//         return  {
+//             fullName : `${user.name} ${user.surname}`,
+//             id : `${user.id}`
+//         }
+//     })
+//     return mappedUsers;
+// }
+// console.log(usersMapped(users))
+// ***************************************
+// Sort by age
+// Pseudocode
+// Define a function named sortByAge that takes array object as a parameter
+// sort them by age
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let arr = [ pete, john, mary ];
+
+function sortByAge(arr) {
+    arr.sort((a,b) => a.age - b.age);
+    return arr;
 }
-console.log(minMax([1]))
+console.log(sortByAge(arr));
+
