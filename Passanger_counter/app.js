@@ -881,15 +881,82 @@
 // Pseudocode
 // Define a function named sortByAge that takes array object as a parameter
 // sort them by age
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
 
-let arr = [ pete, john, mary ];
+// let arr = [ pete, john, mary ];
 
-function sortByAge(arr) {
-    arr.sort((a,b) => a.age - b.age);
-    return arr;
-}
-console.log(sortByAge(arr));
+// function sortByAge(arr) {
+//     arr.sort((a,b) => a.age - b.age);
+//     return arr;
+// }
+// console.log(sortByAge(arr));
+// **********************************************
+// Shuffle elements
+// Define a function named shuffle that takes array as a parameter
+// Starting from the last element shuffle them using math.random
+// function shuffle(arr) {
+//     for(let i = arr.length - 1;i > 0;i--) {
+//         let j = Math.floor(Math.random() * (i + 1));
+//         [arr[i],arr[j]] = [arr[j],arr[i]];
+//     }
+//     return arr;
+// }
+// console.log(shuffle([1,2,3]))
+// ***********************************
+// Pseudocode
+// Define a function named averageAge that takes array of objects as a parameter
+// Reduce the users age and accumulate into sum variable
+// Divide by array length and return the average age
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
 
+// let arr = [ john, pete, mary ];
+// function averageAge(arr) {
+//     let sum = arr.reduce((accumulator,item) => 
+//         accumulator + item.age
+//     ,0);
+//     let aveAge = sum / arr.length;
+//     return aveAge;
+// }
+// console.log(averageAge(arr))
+// *************************************
+// RETURN UNIQUE ELEMENTS
+// Pseudocode
+// Define a function named unique that takes array as a parameter
+// Set a variable named unique array
+// Loop through the array 
+//      find the specific value
+//      push the item to the variable
+// function unique(arr) {
+//     let newArray = [];
+//     for(let item of arr) {
+//         if(!newArray.includes(item)) {
+//             newArray.push(item);
+//         }
+//     }
+//     return newArray;
+// }
+// console.log(unique(["Hare", "Krishna", "Hare", "Krishna",
+//     "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ]))
+// *************************************
+// Pseudocode
+// Define a function named groupById that takes array of objects as a parameter
+// Using map iterate through the array and return group by id object
+// let users = [
+//     {id: 'john', name: "John Smith", age: 20},
+//     {id: 'ann', name: "Ann Smith", age: 24},
+//     {id: 'pete', name: "Pete Peterson", age: 31},
+// ];
+
+// function groupById(arr) {
+//     let groupedObj;
+//     return arr.reduce((obj, value) => {
+//         obj[value.id] = value;
+//         return obj;
+//     },{})
+// }
+// console.log(groupById(users));
