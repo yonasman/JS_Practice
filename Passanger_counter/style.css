@@ -1,14 +1,12 @@
 body {
-    background-color: rgb(14, 173, 205);
+    /* background-color: rgb(14, 173, 205); */
     text-align: center;
 }
-:root {
-    --button-color: #23da23;
+li {
+    text-align: left;
 }
-button {
-    background-color: var(--button-color);
-    width: 200px;
-    /* box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5); */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 1) ;
+#button {
+    width: 80px;
+    height: 20px;
 }
 

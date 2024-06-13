@@ -40,3 +40,30 @@
 
 // ****************************************
 //*************** DOM *********************
+// shopping list
+let input = document.getElementById("input");
+let button = document.getElementById("button");
+let list = document.getElementById("lists")
+function shopItemsAdder(e) {
+    e.preventDefault();
+    let li = document.createElement("li");
+    let del = document.createElement("button");
+    del.textContent = "delete";
+    li.textContent = input.value;
+
+    del.onclick = function() {
+        list.removeChild(li);
+    }
+    li.appendChild(del);
+    list.appendChild(li);
+    del.style.marginLeft = "30px"
+    input.value = ""
+}
+function removeItem(e) {
+    
+    
+    
+    
+}
+button.addEventListener("click", shopItemsAdder);
+button.addEventListener("click",removeItem);

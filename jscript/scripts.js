@@ -18,8 +18,9 @@ blueCom.append(`The number of blue companies is ${blues.length}`)
 // Question three
 // *********************************************
 let body = document.body;
-function changeBg() {
+function changeBg(e) {
     body.style.backgroundColor = "#99ecff";
+    // console.log(e.target)
 }
 function removeBg() {
     body.style.backgroundColor = "";
@@ -74,3 +75,7 @@ function adder(e) {
     }
 }
 submit.addEventListener("click", adder)
+// **********************************************
+let link = document.querySelector("a");
+let text = document.createTextNode("--you're link that's is great!");
+link.appendChild(text)
