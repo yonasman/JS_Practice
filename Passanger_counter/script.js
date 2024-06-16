@@ -58,12 +58,13 @@ function shopItemsAdder(e) {
     list.appendChild(li);
     del.style.marginLeft = "30px"
     input.value = ""
+    li.style.marginBottom = "20px"
 }
-function removeItem(e) {
-    
-    
-    
-    
-}
+
 button.addEventListener("click", shopItemsAdder);
-button.addEventListener("click",removeItem);
+input.addEventListener("focusin",(e) => {
+    e.target.style.backgroundColor = "red"
+})
+input.addEventListener("focusout",(e) => {
+    e.target.style.backgroundColor = ""
+})
