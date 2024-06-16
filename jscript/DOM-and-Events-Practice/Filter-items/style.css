@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form {
+    background-color: #3a8cde;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-weight: bold;
+}
+#filter {
+    width: 200px;
+    /* border-radius: 5px; */
+
+}
