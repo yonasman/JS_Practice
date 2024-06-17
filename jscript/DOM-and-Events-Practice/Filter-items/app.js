@@ -16,3 +16,5 @@ function filterItem(e) {
     })
     
 }
+
+console.log(document.getElementById("item-wrapper").className)
