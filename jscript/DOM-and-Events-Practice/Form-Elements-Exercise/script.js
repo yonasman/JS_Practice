@@ -19,8 +19,8 @@
 // *********************************************
 // 2- checking and unchecking using button
 
-let checkboxes = document.querySelectorAll("input[name = 'Color']");
-let btn = document.getElementById("btn");
+// let checkboxes = document.querySelectorAll("input[name = 'Color']");
+// let btn = document.getElementById("btn");
 // btn.onclick = () => {
 //     checkboxes.forEach((item) => {
 //         if(item.hasAttribute("checked")) {
@@ -51,4 +51,27 @@ let btn = document.getElementById("btn");
 
 // WORKING RADIO BUTTON
 // ********************
-
+let colors = document.querySelectorAll("input[type='radio']");
+// console.log(colors)
+let btn2 = document.getElementById('btn2');
+let div = document.getElementById("root");
+// btn2.onclick = () => {
+//     let selectedColor;
+//     colors.forEach((color) => {
+    
+//     // console.log(color.checked)
+//     if(color.checked) {
+//         selectedColor = color.value;
+//         div.textContent = selectedColor;
+//         return;
+//     }
+// })
+//     div.textContent = selectedColor ? `${selectedColor}`:"You didn't select anything!"
+// }
+btn2.onchange = () => {
+    for(let color of colors) {
+        if(this.checked) {
+            console.log(this.value)
+        }
+    }
+}
